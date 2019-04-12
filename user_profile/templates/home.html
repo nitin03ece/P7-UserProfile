@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <div class="grid-25">
+        nav here maybe?
+    </div>
+    <div class="grid-75">
+        <h1>Welcome to Circle!</h1>
+        {% if user.is_authenticated %}
+            <p></p>
+        {% else %}
+            <p>Hit "Sign in" or "Sign up" above!</p>
+        {% endif %}
+    </div>
+{% endblock %}
