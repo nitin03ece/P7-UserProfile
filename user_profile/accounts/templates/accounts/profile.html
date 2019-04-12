@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h2>Hi {{ user.username }} </h2>
+    {% if user.profile.avatar %}
+        <img src="{{ user.profile.avatar.url }}" width="240">
+    {% else %}
+        <img src="{{ user.profile.avatar }}">
+        <p>No Photo available</p>
+    {%  endif %}
+    <p> <b>Name </b>: {{ user.get_full_name }} </p>
+    <p> <b>Email </b>: {{ user.email | urlize }} </p>
+    <p> <b>Date of Birth </b>: {{ user.profile.dob }} </p>
+    <p> <b>Biography </b>: {{ user.profile.bio|safe }} </p>
+    <p> <b>City </b>: {{ user.profile.city }} </p>
+    <p> <b>Pets </b>: {{ user.profile.favorite_pet }} </p>
+    <p> <b>Hobbies </b>: {{ user.profile.hobbies }} </p>
+{% endblock %}
